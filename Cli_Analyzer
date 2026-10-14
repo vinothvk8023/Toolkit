@@ -1,1 +1,62 @@
+// ========== FILE INFO ==========
+// File      : file.txt
+// Size      : 1240 bytes
+// Lines     : 45
+// Words     : 210
+// Characters: 1350
 
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main(int argc,char *argv[]){
+
+    printf("||------------------------||\n");
+    printf("||                        ||\n");
+    printf("||     CLI Analiyzer      ||\n");
+    printf("||                        ||\n");
+    printf("||------------------------||\n");
+
+    if(argc <2){
+        printf("Invaild cmd line!");
+        return 1;
+    }
+
+    FILE *file;
+    int tempfile;
+    int word=0;
+    int line=0;
+    int ch=0;
+
+
+    file=fopen(argv[1],"r");
+
+    if(file == NULL){
+        printf("file is empty!");
+        return 1;
+    }
+
+    while(((tempfile=fgetc(file))) !=EOF){
+            ch=ch+1;
+
+        if(tempfile == '\n'){
+            line=line+1;
+        }
+        if(isspace((unsigned char)tempfile)){
+            ch=ch=1;
+            ch++;
+
+        }
+            
+        }
+        fclose(file);
+
+    printf("\n");
+    printf("total char:%d\n",tempfile);
+    printf("total lines:%d\n",line);
+    printf("total words:%d\n",word);
+    printf("file content:%",tempfile);
+        
+    return 0;
+
+}
